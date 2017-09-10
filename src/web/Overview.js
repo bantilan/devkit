@@ -82,7 +82,7 @@ var AppCell = Class(Cell, function() {
   this.render = function () {
     var app = this._item.data;
 
-    var iconURL = '/api/icon?app=' + app.paths.root;
+    var iconURL = '/api/icon?app=' + escape(app.paths.root);
     this.setIcon(iconURL);
 
     var label = app.manifest && (app.manifest.title || app.manifest.name) || '<unknown>';
